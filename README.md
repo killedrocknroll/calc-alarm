@@ -1,7 +1,7 @@
 # calcAlarm
 
-- calcAlarm-app/     app's swift files
-- calcAlarm-widget/  alarmkit lock-screen piece
-- calcAlarm-shared/  code for both
-- project.yml        xcodegen instructions
-- .github/workflows/calcAlarm.yml github cloud app instructions
+- calcAlarm-app:     swift files 4 the app
+- calcAlarm-widget:  alarmkit lock-screen component
+- calcAlarm-shared:  metadata 😛
+- project.yml:       xcodegen instructions
+- .github/workflows/calcAlarm.yml:  cloud app instructions
