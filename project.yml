@@ -1,0 +1,43 @@
+name: calcAlarm
+options:
+  deploymentTarget:
+    iOS: "26.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "26.0"
+targets:
+  calcAlarm:
+    type: application
+    platform: iOS
+    sources:
+      - calcAlarm-app
+      - calcAlarm-shared
+    dependencies:
+      - target: calcAlarmWidget
+    info:
+      path: calcAlarm-app/Info.plist
+      properties:
+        CFBundleDisplayName: Calc Alarm
+        UILaunchScreen: {}
+        NSAlarmKitUsageDescription: Used to ring your wake-up alarm.
+        NSSupportsLiveActivities: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.calcalarm
+        TARGETED_DEVICE_FAMILY: "1,2"
+  calcAlarmWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - calcAlarm-widget
+      - calcAlarm-shared
+    info:
+      path: calcAlarm-widget/Info.plist
+      properties:
+        CFBundleDisplayName: Calc Alarm Widget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.calcalarm.widget
